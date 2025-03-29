@@ -1,1 +1,0 @@
-ssh-keyscan ec2-15-207-54-37.ap-south-1.compute.amazonaws.com >> known_hosts
