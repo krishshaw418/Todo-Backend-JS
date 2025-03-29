@@ -13,6 +13,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Install pm2
+      run: |
+        sudo npm install -g pm2  
+
     - name: SSH & Deploy
       env: 
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
