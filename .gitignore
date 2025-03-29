@@ -2,3 +2,5 @@
 .env
 #node modules
 node_modules
+#private-key
+todo-js.pem
