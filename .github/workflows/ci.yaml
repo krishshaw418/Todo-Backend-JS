@@ -16,7 +16,7 @@ jobs:
     - name: SSH & Deploy
       env: 
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        run: |
+      run: |
           echo "$SSH_PRIVATE_KEY" > private_key
           chmod 600 private_key
           ssh -t -i private_key ubuntu@ec2-15-207-54-37.ap-south-1.compute.amazonaws.com "sudo bash ~/deploy.sh"
