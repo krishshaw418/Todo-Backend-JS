@@ -13,7 +13,9 @@ app.use(express.json());
 app.use(cors({ credentials: true, origin : "http://localhost:5173"}));
 app.use(cookieParser());
 
-
+app.get(`/`, async(req, res) => {
+    res.send({message: "Hello from the server!"});
+})
 app.use('/user', userRoutes);
 app.use('/user/action', actionRoutes);
 
