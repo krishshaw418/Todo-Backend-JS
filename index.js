@@ -10,11 +10,11 @@ const cookieParser = require("cookie-parser");
 const userRoutes = require ('./routes/userRoutes');
 const actionRoutes = require ('./routes/actionRoutes');
 app.use(express.json());
-app.use(cors({ credentials: true, origin : "http://localhost:5173"}));
+app.use(cors({ credentials: true, origin : "*"}));
 app.use(cookieParser());
 
 app.get(`/`, async(req, res) => {
-    res.send({message: "Hello from the server!"});
+    res.send("Hello from the server!");
 })
 app.use('/user', userRoutes);
 app.use('/user/action', actionRoutes);
