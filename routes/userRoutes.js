@@ -68,4 +68,8 @@ router.get(`/data`, authenticate, async(req,res) => {
     }
 })
 
+router.get(`/`, async(req, res) => {
+    res.json({message: "Hello from the server!"});
+})
+
 module.exports = router;
