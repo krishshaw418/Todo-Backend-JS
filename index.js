@@ -14,6 +14,7 @@ app.use(cors({ credentials: true, origin : "*"}));
 app.use(cookieParser());
 
 app.get(`/`, async(req, res) => {
+    console.log("Hello form the server!");
     res.send("Hello from the server!");
 })
 app.use('/user', userRoutes);
