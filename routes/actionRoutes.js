@@ -70,7 +70,8 @@ router.put(`/edit-todo/:id`, authenticate, async(req,res) => {
 router.post(`/logout`, (req, res) => {
     res.clearCookie('sessionId',{
         httpOnly: false,
-        secure: false,
+        secure: true,
+        sameSite: 'none',
     });
     return res.json({sucess: true, message: "Logged out successfully!"});
 })
