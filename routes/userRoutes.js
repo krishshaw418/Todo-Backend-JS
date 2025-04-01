@@ -22,8 +22,8 @@ router.post(`/signUp`, async (req, res) => {
         const token = jwt.sign({id:newUser._id}, process.env.TOKEN_SECRET, {expiresIn: "10m"});
         res.cookie('sessionId', token, {
             httpOnly: true,
-            secure: false,
-            sameSite: "lax",
+            secure: true,
+            sameSite: "none",
         })
         return res.json({sucess: true, message: "User added succesfully!"});
     } catch (error) {
@@ -45,8 +45,8 @@ router.post(`/signIn`, async (req, res) => {
         const token = jwt.sign({id:user._id}, process.env.TOKEN_SECRET, {expiresIn: "10m"});
         res.cookie('sessionId', token, {
             httpOnly: true,
-            secure: false,
-            sameSite: "lax",
+            secure: true,
+            sameSite: "none",
         })
         return res.json({sucess: true, message: "Login Successful!"});
     } catch (error) {
